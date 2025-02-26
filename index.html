@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3U Groups Selector</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>M3U Groups Selector</h1>
+    
+    <div class="card input-section">
+      <h2>Import M3U File</h2>
+      
+      <div class="input-option">
+        <h3><i class="fas fa-file-upload"></i> Upload Local File</h3>
+        <input type="file" id="fileInput" accept=".m3u,.m3u8,.txt">
+      </div>
+      
+      <div class="input-option">
+        <h3><i class="fas fa-globe"></i> Fetch from URL</h3>
+        <div class="url-input-group">
+          <input type="text" id="urlInput" placeholder="Enter URL to M3U file">
+          <button id="fetchBtn"><i class="fas fa-download"></i> Fetch</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card list-container" id="groupList">
+      <div class="list-header">
+        <h2>Channel Groups</h2>
+        <span class="counter-badge" id="groupsCounter">0 groups</span>
+      </div>
+      
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <p>Processing file...</p>
+      </div>
+      
+      <p id="groupItemsMessage" class="empty-message">No groups to display. Please load a file first.</p>
+      <div id="groupItems"></div>
+      
+      <div class="action-buttons">
+        <button id="selectAllBtn" class="secondary"><i class="fas fa-check-double"></i> Select All</button>
+        <button id="deselectAllBtn" class="secondary"><i class="fas fa-times"></i> Deselect All</button>
+      </div>
+    </div>
+    
+    <button id="printSelectedBtn"><i class="fas fa-eye"></i> Preview Selected Channels</button>
+    
+    <div class="card output-section">
+      <div class="list-header">
+        <h2>Selected Channels</h2>
+        <span class="counter-badge" id="selectedCounter">0 selected</span>
+      </div>
+      <div id="selectedOutput"></div>
+    </div>
+    
+    <button id="outputSelectedBtn"><i class="fas fa-file-export"></i> Export Selected Groups</button>
+  </div>
+  
+  <div class="footer">
+    <p>M3U File Processor © 2025</p>
+  </div>
+  
+  <script src="index.js"></script>
+</body>
+</html>
